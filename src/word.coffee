@@ -111,6 +111,7 @@ class WordExtractor
 
     pieces = (pieceTableSize - 4) / 12
     start = 0
+    lastPosition = 0
 
     for x in [0..pieces - 1] by 1
       offset = pos + ((pieces + 1) * 4) + (x * 8) + 2
@@ -135,10 +136,14 @@ class WordExtractor
       }
 
       console.log "Piece", piece
-      result.pieces.push getPiece(buffer, piece)
+      getPiece(buffer, piece)
+      piece.length = piece.text.length
+      piece.position = lastPosition
+      piece.endPosition = lastPosition + piece.length
+      result.pieces.push piece
 
       start = start + (if unicode then Math.floor(totLength / 2) else totLength)
-
+      lastPosition = lastPosition + piece.length
 
   extractWordDocument = (document, buffer) ->
     new Promise (resolve, reject) ->

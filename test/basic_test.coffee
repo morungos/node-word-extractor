@@ -20,3 +20,12 @@ describe 'WordExtractor', () ->
             Object.keys(result.bookmarks).should.be.instanceof(Array).and.be.of.length(0)
             result.boundaries.should.contain.keys(['fcMin', 'ccpText', 'ccpFtn', 'ccpHdd', 'ccpAtn'])
           .should.notify(done)
+
+    it 'should retrieve document text', (done) ->
+      extractor.extract 'test/data/test1.doc'
+        .then (document) ->
+          body = document.getBody()
+          body.should.match new RegExp('Welcome to BlogCFC')
+          body.should.match new RegExp('http://lyla.maestropublishing.com/')
+          body.should.match new RegExp('You must use the IDs.')
+        .should.notify(done)
