@@ -1,53 +1,12 @@
-Buffer = require('buffer').Buffer
+Buffer =         require('buffer').Buffer
 
-oleDoc =    require('ole-doc').OleCompoundDoc
-Promise =   require 'bluebird'
+oleDoc =         require('ole-doc').OleCompoundDoc
+Promise =        require 'bluebird'
 
-filters = []
-filters[0x0002] = 0
-filters[0x0005] = 0
-filters[0x0008] = 0
-filters[0x2018] = "'"
-filters[0x2019] = "'"
-filters[0x201C] = "\""
-filters[0x201D] = "\""
-filters[0x0007] = "\t"
-filters[0x000D] = "\n"
-filters[0x2002] = " "
-filters[0x2003] = " "
-filters[0x2012] = "-"
-filters[0x2013] = "-"
-filters[0x2014] = "-"
-filters[0x000A] = "\n"
-filters[0x000D] = "\n"
+filters =        require './filters'
+translations =   require './translations'
 
-translations = []
-translations[0x82] = 0x201A
-translations[0x83] = 0x0192
-translations[0x84] = 0x201E
-translations[0x85] = 0x2026
-translations[0x86] = 0x2020
-translations[0x87] = 0x2021
-translations[0x88] = 0x02C6
-translations[0x89] = 0x2030
-translations[0x8A] = 0x0160
-translations[0x8B] = 0x2039
-translations[0x8C] = 0x0152
-translations[0x91] = 0x2018
-translations[0x92] = 0x2019
-translations[0x93] = 0x201C
-translations[0x94] = 0x201D
-translations[0x95] = 0x2022
-translations[0x96] = 0x2013
-translations[0x97] = 0x2014
-translations[0x98] = 0x02DC
-translations[0x99] = 0x2122
-translations[0x9A] = 0x0161
-translations[0x9B] = 0x203A
-translations[0x9C] = 0x0153
-translations[0x9F] = 0x0178
-
-class Word
+class WordExtractor
 
   constructor: (options) ->
     if typeof options == 'string'
@@ -197,22 +156,6 @@ class Word
     @filter string, shouldFilter
 
 
-  getText: () ->
-    result = []
-    index = 1
-    position = 0
-    pieces = @pieces
-    for piece in pieces
-      piece.position = position
-      @getPiece piece
-      segment = piece.text
-      result.push segment
-      length = segment.length
-      piece.length = length
-      piece.endPosition = position + length
-      position = position + length
-
-
   getPieces: () ->
     pos = @data.readUInt32LE(0x01a2)
     console.log "Pos", pos
@@ -319,4 +262,4 @@ class Word
     @doc.read()
 
 
-module.exports = Word
+module.exports = WordExtractor
