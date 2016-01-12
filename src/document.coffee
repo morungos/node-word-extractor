@@ -2,10 +2,11 @@ filters =        require './filters'
 
 class Document
 
-  constructor: (pieces, bookmarks, boundaries) ->
-    @pieces = pieces
-    @bookmarks = bookmarks
-    @boundaries = boundaries
+
+  constructor: () ->
+    @pieces = []
+    @bookmarks = {}
+    @boundaries = {}
 
 
   getPieceIndex = (pieces, position) ->
