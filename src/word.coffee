@@ -8,7 +8,7 @@ translations =   require './translations'
 
 class WordExtractor
 
-  constructor: (options) ->
+  constructor: () ->
     if typeof options == 'string'
       options = {filename: options}
     else
@@ -58,14 +58,6 @@ class WordExtractor
       @ccpFtn = @data.readUInt32LE(0x0050)
       @ccpHdd = @data.readUInt32LE(0x0054)
       @ccpAtn = @data.readUInt32LE(0x005c)
-
-      @charPLC = @data.readUInt32LE(0x00fa)
-      @charPlcSize = @data.readUInt32LE(0x00fe)
-      @parPLC = @data.readUInt32LE(0x0102)
-      @parPlcSize = @data.readUInt32LE(0x0106)
-
-      @fcPlcfBteChpx = @data.readUInt32LE(0x0fa)
-      @lcbPlcfBteChpx = @data.readUInt32LE(0x0fe)
 
       console.log "fcMin", @fcMin
       console.log "ccpText", @ccpText
@@ -246,9 +238,9 @@ class WordExtractor
 
     string
 
-  extract: (cb) ->
-    console.log "File", @filename
-    @doc = new oleDoc(@filename)
+  extract: (filename, cb) ->
+    console.log "File", filename
+    @doc = new oleDoc(filename)
     @doc.on 'err', (err) =>
       console.log "Error", err
       cb err

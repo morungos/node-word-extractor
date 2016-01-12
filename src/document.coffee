@@ -2,14 +2,21 @@ filters =        require './filters'
 
 class Document
 
-  constructor: (pieces) ->
+  constructor: (pieces, bookmarks, boundaries) ->
     @pieces = pieces
+    @bookmarks = bookmarks
+    @boundaries = boundaries
+
+
+  getPieceIndex = (pieces, position) ->
+    for piece, i in pieces
+      return i if position <= piece.endPosition
 
 
   getTextRange: (start, end) ->
     pieces = @pieces
-    startPiece = @getPieceIndex(start)
-    endPiece = @getPieceIndex(end)
+    startPiece = getPieceIndex(pieces, start)
+    endPiece = getPieceIndex(pieces, end)
     result = []
     for i in [startPiece..endPiece] by 1
       piece = pieces[i]
@@ -18,11 +25,6 @@ class Document
       result.push piece.text.substring(xstart, xend - xstart)
 
     result.join("")
-
-
-  getPieceIndex: (position) ->
-    for piece, i in @pieces
-      return i if position <= piece.endPosition
 
 
   filter = (text, shouldFilter) ->
@@ -44,7 +46,11 @@ class Document
     matcher = /(?:[\x02\x05\x07\x08\x0a\x0d\u2018\u2019\u201c\u201d\u2002\u2003\u2012\u2013\u2014]|\x13(?:[^\x14]*\x14)?([^\x15]*)\x15)/g
     text.replace replacer
 
+
   getBody: (shouldFilter) ->
     shouldFilter ?= true
-    string = @getTextRange(0, @ccpText)
-    @filter string, shouldFilter
+    string = @getTextRange(0, @boundaries.ccpText)
+    filter string, shouldFilter
+
+
+module.exports = Document

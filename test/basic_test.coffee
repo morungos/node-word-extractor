@@ -10,7 +10,7 @@ describe 'WordExtractor', () ->
 
     it 'should extract successfully', (done) ->
 
-      word = new WordExtractor('test/data/test1.doc')
-      word.extract (err, data) ->
+      word = new WordExtractor()
+      word.extract 'test/data/test1.doc', (err, data) ->
         console.log "Error", err, data
         done(err)
