@@ -31,6 +31,8 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "bluebird": "^2.6.0"
+    "async": "^1.5.2",
+    "bluebird": "^2.6.0",
+    "underscore": "^1.8.3"
   }
 }
