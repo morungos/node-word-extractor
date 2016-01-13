@@ -103,10 +103,11 @@ DirectoryTree.prototype.load = function( secIds, callback ) {
    var self = this;
    var doc = this._doc;
 
-   doc._readSectors( secIds, function(buffer) {
+   doc._readSectors( secIds, function(buffer, fileOffset) {
 
       var count = buffer.length / 128;
       self._entries = new Array( count );
+
       var i = 0;
       for( i = 0; i < count; i++ )
       {
@@ -123,6 +124,9 @@ DirectoryTree.prototype.load = function( secIds, callback ) {
          entry.storageDirId = buffer.readInt32LE( 76 + offset );
          entry.secId = buffer.readInt32LE( 116 + offset );
          entry.size = buffer.readInt32LE( 120 + offset );
+
+         entry.dirEntryPos = offset + fileOffset;
+         entry.toString = function() { return this.name; };
 
          self._entries[i] = entry;
       }
@@ -405,6 +409,7 @@ OleCompoundDoc.prototype._readSectors = function(secIds, callback) {
    var self = this;
    var header = self._header;
    var buffer = new Buffer( secIds.length * header.secSize );
+   var bufferPos = 0;
 
    var i = 0;
 
@@ -415,6 +420,9 @@ OleCompoundDoc.prototype._readSectors = function(secIds, callback) {
       function(whilstCallback) {
          var bufferOffset = i * header.secSize;
          var fileOffset = self._getFileOffsetForSec( secIds[i] );
+         if (!bufferPos) {
+            bufferPos = fileOffset;
+         }
          fs.read( self._fd, buffer, bufferOffset, header.secSize, fileOffset, function(err, bytesRead, buffer) {
             if ( err ) {
                self.emit('err', err);
@@ -429,7 +437,7 @@ OleCompoundDoc.prototype._readSectors = function(secIds, callback) {
             self.emit('err', err);
          }
          console.log("Done reading sectors");
-         callback(buffer);
+         callback(buffer, bufferPos);
       }
    );
 };
