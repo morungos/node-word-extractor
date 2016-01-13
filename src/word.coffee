@@ -1,6 +1,6 @@
 Buffer =         require('buffer').Buffer
 
-oleDoc =         require('ole-doc').OleCompoundDoc
+oleDoc =         require('./ole-doc').OleCompoundDoc
 Promise =        require 'bluebird'
 
 filters =        require './filters'
@@ -40,8 +40,10 @@ class WordExtractor
   extract: (filename) ->
     extractDocument(filename)
       .then (document) ->
+        console.log("SW Calling documentStream")
         documentStream(document, 'WordDocument')
           .then (stream) ->
+            console.log("Got stream")
             streamBuffer(stream)
           .then (buffer) ->
             extractWordDocument(document, buffer)
@@ -149,7 +151,8 @@ class WordExtractor
     new Promise (resolve, reject) ->
       magic = buffer.readUInt16LE(0)
       if magic != 0xa5ec
-        return reject new Error("This does not seem to be a Word document: Invalid magic number: " + magic)
+        console.log buffer
+        return reject new Error("This does not seem to be a Word document: Invalid magic number: " + magic.toString(16))
 
       flags = buffer.readUInt16LE(0xA)
       console.log "Flags", flags.toString(16)
