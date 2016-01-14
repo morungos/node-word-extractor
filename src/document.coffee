@@ -11,22 +11,18 @@ class Document
 
   getPieceIndex = (pieces, position) ->
     for piece, i in pieces
-      console.log "Piece", i, piece.endPosition, position
       return i if position <= piece.endPosition
 
 
   getTextRange: (start, end) ->
-    console.log "Getting text range", start, end
     pieces = @pieces
     startPiece = getPieceIndex(pieces, start)
     endPiece = getPieceIndex(pieces, end)
     result = []
-    console.log "Pieces from", startPiece, endPiece
     for i in [startPiece..endPiece] by 1
       piece = pieces[i]
       xstart = if i == startPiece then start - piece.position else 0
       xend = if i == endPiece then end - piece.position else piece.endPosition
-      console.log "i", i, "xstart", xstart, "xend", xend
       result.push piece.text.substring(xstart, xend - xstart)
 
     result.join("")
