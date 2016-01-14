@@ -28,7 +28,6 @@ class WordExtractor
 
   extractDocument = (filename) ->
     new Promise (resolve, reject) ->
-      console.log "File", filename
       document = new oleDoc(filename)
       document.on 'err', (error) =>
         reject(error)
@@ -40,10 +39,8 @@ class WordExtractor
   extract: (filename) ->
     extractDocument(filename)
       .then (document) ->
-        console.log("SW Calling documentStream")
         documentStream(document, 'WordDocument')
           .then (stream) ->
-            console.log("Got stream")
             streamBuffer(stream)
           .then (buffer) ->
             extractWordDocument(document, buffer)
@@ -90,20 +87,16 @@ class WordExtractor
 
   writePieces = (buffer, tableBuffer, result) ->
     pos = buffer.readUInt32LE(0x01a2)
-    console.log "Pos", pos
 
     while true
       flag = tableBuffer.readUInt8(pos)
-      console.log "Flag skipping", flag
       break if flag != 1
 
       pos = pos + 1
       skip = tableBuffer.readUInt16LE(pos)
       pos = pos + 2 + skip
-      console.log "Skipping", skip
 
     flag = tableBuffer.readUInt8(pos)
-    console.log "Flag after skipping", flag
     pos = pos + 1
     if flag != 2
       throw new Error("Internal error: ccorrupted Word file")
@@ -128,8 +121,6 @@ class WordExtractor
       lEnd = tableBuffer.readUInt32LE(pos + ((x + 1) * 4))
       totLength = lEnd - lStart
 
-      console.log "lStart", lStart, "lEnd", lEnd
-
       piece = {
         start: start
         totLength: totLength
@@ -137,7 +128,6 @@ class WordExtractor
         unicode: unicode
       }
 
-      console.log "Piece", piece
       getPiece(buffer, piece)
       piece.length = piece.text.length
       piece.position = lastPosition
@@ -155,7 +145,6 @@ class WordExtractor
         return reject new Error("This does not seem to be a Word document: Invalid magic number: " + magic.toString(16))
 
       flags = buffer.readUInt16LE(0xA)
-      console.log "Flags", flags.toString(16)
 
       table = if (flags & 0x0200) != 0 then "1Table" else "0Table"
 
@@ -197,7 +186,6 @@ class WordExtractor
 
 
   addText = (buffer, textStart, textEnd) ->
-    console.log "Adding text", textStart, textEnd
     slice = buffer.slice(textStart, textEnd)
     slice.toString('binary')
 
