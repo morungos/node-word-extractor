@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/morungos/node-word.git"
+    "url": "https://github.com/morungos/node-word-extractor.git"
   },
   "keywords": [
     "word"
@@ -16,9 +16,9 @@
   "author": "Stuart Watt <stuart@morungos.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/morungos/node-word/issues"
+    "url": "https://github.com/morungos/node-word-extractor/issues"
   },
-  "homepage": "https://github.com/morungos/node-word",
+  "homepage": "https://github.com/morungos/node-word-extractor",
   "devDependencies": {
     "chai": "^1.10.0",
     "chai-as-promised": "^4.1.1",
