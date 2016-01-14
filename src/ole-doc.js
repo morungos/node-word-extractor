@@ -17,28 +17,20 @@ Header.prototype.load = function( buffer ) {
          return false;
    }
 
-   this.secSize        = 1 << buffer.readUInt16LE( 30 );  // Size of sectors
-   this.shortSecSize   = 1 << buffer.readUInt16LE( 32 );  // Size of short sectors
-   this.SATSize        =      buffer.readUInt32LE( 44 );  // Number of sectors used for the Sector Allocation Table
-   this.dirSecId       =      buffer.readUInt32LE( 48 );  // Starting Sec ID of the directory stream
-   this.shortStreamMax =      buffer.readUInt32LE( 56 );  // Maximum size of a short stream
-   this.SSATSecId      =      buffer.readUInt32LE( 60 );  // Starting Sec ID of the Short Sector Allocation Table
-   this.SSATSize       =      buffer.readUInt32LE( 64 );  // Number of sectors used for the Short Sector Allocation Table
-   this.MSATSecId      =      buffer.readUInt32LE( 68 );  // Starting Sec ID of the Master Sector Allocation Table
-   this.MSATSize       =      buffer.readUInt32LE( 72 );  // Number of sectors used for the Master Sector Allocation Table
-
-   console.log("shortStreamMax", this.shortStreamMax.toString(16))
+   this.secSize        = 1 << buffer.readInt16LE( 30 );  // Size of sectors
+   this.shortSecSize   = 1 << buffer.readInt16LE( 32 );  // Size of short sectors
+   this.SATSize        =      buffer.readInt32LE( 44 );  // Number of sectors used for the Sector Allocation Table
+   this.dirSecId       =      buffer.readInt32LE( 48 );  // Starting Sec ID of the directory stream
+   this.shortStreamMax =      buffer.readInt32LE( 56 );  // Maximum size of a short stream
+   this.SSATSecId      =      buffer.readInt32LE( 60 );  // Starting Sec ID of the Short Sector Allocation Table
+   this.SSATSize       =      buffer.readInt32LE( 64 );  // Number of sectors used for the Short Sector Allocation Table
+   this.MSATSecId      =      buffer.readInt32LE( 68 );  // Starting Sec ID of the Master Sector Allocation Table
+   this.MSATSize       =      buffer.readInt32LE( 72 );  // Number of sectors used for the Master Sector Allocation Table
 
    // The first 109 sectors of the MSAT
    this.partialMSAT = new Array(109);
    for( i = 0; i < 109; i++ )
-      this.partialMSAT[i] = buffer.readUInt32LE( 76 + i * 4 );
-
-   console.log("dirSecId", this.dirSecId);
-   console.log("SSATSecId", this.SSATSecId);
-   console.log("SSATSize", this.SSATSize);
-   console.log("MSATSecId", this.MSATSecId);
-   console.log("MSATSize", this.MSATSize);
+      this.partialMSAT[i] = buffer.readInt32LE( 76 + i * 4 );
 
    return true;
 };
@@ -47,10 +39,10 @@ function AllocationTable(doc) {
    this._doc = doc;
 }
 
-AllocationTable.SecIdFree       = 0xffffffff;
-AllocationTable.SecIdEndOfChain = 0xfffffffe;
-AllocationTable.SecIdSAT        = 0xfffffffd;
-AllocationTable.SecIdMSAT       = 0xfffffffc;
+AllocationTable.SecIdFree       = -1;
+AllocationTable.SecIdEndOfChain = -2;
+AllocationTable.SecIdSAT        = -3;
+AllocationTable.SecIdMSAT       = -4;
 
 AllocationTable.prototype.load = function(secIds, callback) {
    var self = this;
@@ -62,7 +54,7 @@ AllocationTable.prototype.load = function(secIds, callback) {
    doc._readSectors( secIds, function(buffer) {
       var i;
       for ( i = 0; i < buffer.length / 4; i++ ) {
-         self._table[i] = buffer.readUInt32LE( i * 4 );
+         self._table[i] = buffer.readInt32LE( i * 4 );
       }
       callback();
    });
@@ -71,15 +63,9 @@ AllocationTable.prototype.load = function(secIds, callback) {
 AllocationTable.prototype.getSecIdChain = function(startSecId) {
    var secId = startSecId;
    var secIds = [];
-   console.log("Starting secId", secId);
-   while ( secId < AllocationTable.SecIdMSAT ) {
+   while ( secId != AllocationTable.SecIdEndOfChain ) {
       secIds.push( secId );
       secId = this._table[secId];
-      console.log("Next secId", secId);
-   }
-
-   if (secId != AllocationTable.SecIdEndOfChain) {
-     console.warn("invalid chain terminator: " + secId.toString(16));
    }
 
    return secIds;
@@ -132,7 +118,6 @@ DirectoryTree.prototype.load = function( secIds, callback ) {
       });
 
       self._buildHierarchy( self.root );
-      console.log("Built hierarchy");
 
       callback();
    });
@@ -145,7 +130,6 @@ DirectoryTree.prototype._buildHierarchy = function( storageEntry ) {
    storageEntry.storages = {};
    storageEntry.streams  = {};
 
-   console.log("Reading childIds");
    _.each( childIds, function( childId ) {
       var childEntry = self._entries[childId];
       var name = childEntry.name;
@@ -157,11 +141,9 @@ DirectoryTree.prototype._buildHierarchy = function( storageEntry ) {
       }
    });
 
-   console.log("Reading storages");
    _.each( storageEntry.storages, function( childStorageEntry ) {
       self._buildHierarchy( childStorageEntry );
    });
-   console.log("Done reading storages");
 };
 
 DirectoryTree.prototype._getChildIds = function( storageEntry ) {
@@ -179,7 +161,6 @@ DirectoryTree.prototype._getChildIds = function( storageEntry ) {
       }
    };
 
-   console.log(storageEntry.storageDirId);
    if ( storageEntry.storageDirId > -1 ) {
       childIds.push( storageEntry.storageDirId );
       var rootChildEntry = self._entries[storageEntry.storageDirId];
@@ -203,28 +184,23 @@ Storage.prototype.stream = function( streamName ) {
    if ( !streamEntry )
       return null;
 
-   console.log("Calling Storage.prototype.stream", streamEntry)
-
    var self = this;
    var doc  = self._doc;
    var bytes = streamEntry.size;
 
    var allocationTable = doc._SAT;
    var shortStream = false;
-   if ( bytes <= doc._header.shortStreamMax ) {
+   if ( bytes < doc._header.shortStreamMax ) {
       shortStream = true;
       allocationTable = doc._SSAT;
    }
 
-   console.log("Calling allocationTable.getSecIdChain", streamEntry.secId);
    var secIds = allocationTable.getSecIdChain( streamEntry.secId );
-   console.log("Done allocationTable.getSecIdChain");
 
    return es.readable( function( i, callback ) {
       var stream = this;  // Function called in context of stream
 
       if ( i >= secIds.length ) {
-         console.log("Emitting end");
          stream.emit('end');
          return;
       }
@@ -235,7 +211,6 @@ Storage.prototype.stream = function( streamName ) {
          }
 
          bytes -= buffer.length;
-         console.log("Emitting data");
          stream.emit('data', buffer);
          callback();
       };
@@ -294,7 +269,6 @@ OleCompoundDoc.prototype._read = function() {
             return;
          }
 
-         console.log("About to emit ready");
          this.emit('ready');
       }).bind(this)
    );
@@ -378,6 +352,7 @@ OleCompoundDoc.prototype._readMSAT = function(callback) {
                   break;
                else
                   self._MSAT[currMSATIndex] = sectorBuffer.readInt32LE( s );
+
                currMSATIndex++;
             }
 
@@ -428,7 +403,6 @@ OleCompoundDoc.prototype._readSectors = function(secIds, callback) {
          if ( err ) {
             self.emit('err', err);
          }
-         console.log("Done reading sectors");
          callback(buffer);
       }
    );
@@ -488,8 +462,6 @@ OleCompoundDoc.prototype._readSSAT = function(callback) {
       return;
    }
 
-   console.log("_SSAT secIds", secIds);
-
    self._SSAT.load( secIds, callback);
 };
 
@@ -503,11 +475,9 @@ OleCompoundDoc.prototype._readDirectoryTree = function(callback) {
    self._directoryTree.load( secIds, function() {
 
       var rootEntry = self._directoryTree.root;
-      console.log("rootEntry", rootEntry);
       self._rootStorage = new Storage( self, rootEntry );
       self._shortStreamSecIds = self._SAT.getSecIdChain( rootEntry.secId );
 
-      console.log("Done OleCompoundDoc.prototype._readDirectoryTree");
       callback();
    });
 };
