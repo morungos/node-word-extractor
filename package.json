@@ -1,5 +1,5 @@
 {
-  "name": "node-word",
+  "name": "word-extractor",
   "version": "0.1.0",
   "description": "Node.js package to read Word .DOC files",
   "main": "lib/word.js",
