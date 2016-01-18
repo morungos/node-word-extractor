@@ -8,12 +8,12 @@ Buffer = require('buffer').Buffer
 WordExtractor = require('../lib/word')
 Document = require('../lib/document')
 
-describe 'Word file test9.doc', () ->
+describe 'Word file test09.doc', () ->
 
   extractor = new WordExtractor()
 
   it 'should match the expected body', (done) ->
-    extract = extractor.extract path.resolve(__dirname, "data/test9.doc")
+    extract = extractor.extract path.resolve(__dirname, "data/test09.doc")
     expect(extract).to.be.fulfilled
     extract
       .then (result) ->
