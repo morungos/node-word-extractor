@@ -5,15 +5,15 @@ fs = require('fs')
 path = require('path')
 Buffer = require('buffer').Buffer
 
-WordExtractor = require('../lib/word')
-Document = require('../lib/document')
+WordExtractor = require('../src/word')
+Document = require('../src/document')
 
-describe 'Word file test2.doc', () ->
+describe 'Word file test02.doc', () ->
 
   extractor = new WordExtractor()
 
   it 'should match the expected body', (done) ->
-    extract = extractor.extract path.resolve(__dirname, "data/test2.doc")
+    extract = extractor.extract path.resolve(__dirname, "data/test02.doc")
     expect(extract).to.be.fulfilled
     extract
       .then (result) ->
