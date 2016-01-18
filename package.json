@@ -1,6 +1,6 @@
 {
   "name": "word-extractor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node.js package to read Word .DOC files",
   "main": "lib/word.js",
   "scripts": {
