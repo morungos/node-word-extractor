@@ -5,7 +5,7 @@ fs = require('fs')
 path = require('path')
 Buffer = require('buffer').Buffer
 
-oleDoc = require('../lib/ole-doc').OleCompoundDoc;
+oleDoc = require('../src/ole-doc').OleCompoundDoc;
 
 testWordFile = (file) ->
   describe 'Word file ' + file, () ->

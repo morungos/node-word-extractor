@@ -23,7 +23,7 @@ class Document
       piece = pieces[i]
       xstart = if i == startPiece then start - piece.position else 0
       xend = if i == endPiece then end - piece.position else piece.endPosition
-      result.push piece.text.substring(xstart, xend - xstart)
+      result.push piece.text.substring(xstart, xend)
 
     result.join("")
 
@@ -50,7 +50,29 @@ class Document
 
   getBody: (shouldFilter) ->
     shouldFilter ?= true
-    string = @getTextRange(0, @boundaries.ccpText)
+    start = 0
+    string = @getTextRange(start, start + @boundaries.ccpText)
+    filter string, shouldFilter
+
+
+  getFootnotes: (shouldFilter) ->
+    shouldFilter ?= true
+    start = @boundaries.ccpText
+    string = @getTextRange(start, start + @boundaries.ccpFtn)
+    filter string, shouldFilter
+
+
+  getHeaders: (shouldFilter) ->
+    shouldFilter ?= true
+    start = @boundaries.ccpText + @boundaries.ccpFtn
+    string = @getTextRange(start, start + @boundaries.ccpHdd)
+    filter string, shouldFilter
+
+
+  getAnnotations: (shouldFilter) ->
+    shouldFilter ?= true
+    start = @boundaries.ccpText + @boundaries.ccpFtn + @boundaries.ccpHdd
+    string = @getTextRange(start, start + @boundaries.ccpAtn)
     filter string, shouldFilter
 
 

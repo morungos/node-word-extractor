@@ -5,8 +5,8 @@ fs = require('fs')
 path = require('path')
 Buffer = require('buffer').Buffer
 
-WordExtractor = require('../lib/word')
-Document = require('../lib/document')
+WordExtractor = require('../src/word')
+Document = require('../src/document')
 
 testWordFile = (file) ->
 
