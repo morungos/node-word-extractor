@@ -20,3 +20,13 @@ describe 'Word file test04.doc', () ->
         body = result.getBody()
         expect(body).to.match new RegExp('Moli\\u00e8re')
         done()
+
+  it 'should have headers and footers', (done) ->
+    extract = extractor.extract path.resolve(__dirname, "data/test04.doc")
+    expect(extract).to.be.fulfilled
+    extract
+      .then (result) ->
+        body = result.getHeaders()
+        expect(body).to.match new RegExp('The footer')
+        expect(body).to.match new RegExp('Moli\\u00e8re')
+        done()
