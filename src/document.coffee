@@ -23,7 +23,7 @@ class Document
       piece = pieces[i]
       xstart = if i == startPiece then start - piece.position else 0
       xend = if i == endPiece then end - piece.position else piece.endPosition
-      result.push piece.text.substring(xstart, xend - xstart)
+      result.push piece.text.substring(xstart, xend)
 
     result.join("")
 
