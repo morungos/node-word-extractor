@@ -7,7 +7,7 @@ Read data from a Word document using node.js
 
 There are a fair number of npm components which can extract text from Word .doc files, but they all appear to require some external helper program, and involve either spawning a process or communicating with a persistent one. That raises the installation and deployment burden as well as the runtime one.
 
-This module is intended to provide a much faster way of reading the next from a Word file, without leaving the node.js environment.
+This module is intended to provide a much faster way of reading the text from a Word file, without leaving the node.js environment.
 
 
 #### How do I use this module?
