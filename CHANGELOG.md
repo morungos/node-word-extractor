@@ -1,3 +1,7 @@
+### 0.1.2 / 6th July 2016
+
+ * Added the missing lib folder
+
 ### 0.1.1 / 17th January 2016
 
  * Fixed a bug with text boundary calculations

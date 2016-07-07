@@ -14,3 +14,6 @@ gulp.task 'test', ['translate'], () ->
     .pipe mocha({reporter: 'spec'})
 
 gulp.task 'build', ['translate']
+
+gulp.task 'default', ['build']
+
