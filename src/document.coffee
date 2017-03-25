@@ -34,7 +34,7 @@ class Document
 
     replacer = (match, rest...) ->
       if match.length == 1
-        replaced = filters[match.charPointAt(0)]
+        replaced = filters[match.charCodeAt(0)]
         if replaced == 0
           ""
         else
@@ -45,7 +45,7 @@ class Document
         rest[0]
 
     matcher = /(?:[\x02\x05\x07\x08\x0a\x0d\u2018\u2019\u201c\u201d\u2002\u2003\u2012\u2013\u2014]|\x13(?:[^\x14]*\x14)?([^\x15]*)\x15)/g
-    text.replace replacer
+    text.replace(matcher, replacer)
 
 
   getBody: (shouldFilter) ->
