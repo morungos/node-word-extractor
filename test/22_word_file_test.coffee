@@ -16,5 +16,4 @@ describe 'Word file test12.doc', () ->
     extractor.extract path.resolve(__dirname, "data/test12.doc")
       .then (result) ->
         body = result.getBody()
-        console.log(JSON.stringify(body))
         expect(body).to.match /Row 2, cell 3/
