@@ -14,17 +14,19 @@ This module is intended to provide a much faster way of reading the text from a 
 
     var WordExtractor = require("word-extractor");
     var extractor = new WordExtractor();
-    var doc = extractor.extract("file.doc")
-    var body = doc.getBody();
+    var extracted = extractor.extract("file.doc");
+    extracted.then(function(doc) {
+      console.log(doc.getBody());
+    });
 
-The object returned from the `extract()` method is a document object, and provides several views onto different parts of the document contents.
+The object returned from the `extract()` method is a promise that resolves to a document object, which then provides several views onto different parts of the document contents.
 
 
 #### Methods
 
 `WordExtractor#extract(file)`
 
-Main method to open a Word file and retrieve the data. Returns a `Document`.
+Main method to open a Word file and retrieve the data. Returns a promise which resolves to a `Document`.
 
 `Document#getBody()`
 
@@ -45,6 +47,6 @@ Retrieves the comment bubble text from a Word document. This will handle UNICODE
 
 #### License
 
-Copyright (c) 2016. Stuart Watt.
+Copyright (c) 2016-2017. Stuart Watt.
 
 Licensed under the MIT License.
