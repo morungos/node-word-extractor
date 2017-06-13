@@ -30,6 +30,9 @@
     "async": "^1.5.2",
     "bluebird": "^2.6.0",
     "event-stream": "^3.3.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.24",
+    "yauzl": "^2.8.0"
   }
 }
