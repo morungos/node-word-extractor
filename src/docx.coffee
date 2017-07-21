@@ -28,14 +28,20 @@ calculateExtractedText = (inText) ->
   ps.forEach (paragraph) ->
     localText = ''
 
+    parent = paragraph.parentNode
+    if parent.localName == 'tc'
+      console.log parent.parentNode.localName
+
     paragraph = new Dom().parseFromString(paragraph.toString())
 
-    ts = xpath.select("//*[local-name()='t' or local-name()='tab' or local-name()='br']", paragraph)
+    ts = xpath.select("//*[local-name()='t' or local-name()='tab' or local-name()='br' or local-name()='instrText']", paragraph)
     ts.forEach (t) ->
       if t.localName == 't' && t.childNodes.length > 0
         localText += t.childNodes[0].data
       else if t.localName == 'tab' or t.localName == 'br'
         localText += ' '
+      else if t.localName == 'instrText'
+        localText += t.childNodes[0].data
 
     text += localText + '\n'
 

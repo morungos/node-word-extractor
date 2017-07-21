@@ -14,7 +14,7 @@ testWordFile = (file) ->
       filename = path.resolve(__dirname, "data/" + file)
       doc = new DOCXExtractor()
       doc.extract(filename)
-
+        .then (result) -> console.log result
 
 files = fs.readdirSync(path.resolve(__dirname, "data"))
 files.filter (file) ->
