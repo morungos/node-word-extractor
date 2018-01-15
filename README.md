@@ -9,6 +9,14 @@ There are a fair number of npm components which can extract text from Word .doc 
 
 This module is intended to provide a much faster way of reading the text from a Word file, without leaving the node.js environment.
 
+#### How do I install this module?
+
+```bash=
+yarn add word-extractor
+
+# Or using npm... 
+npm install word-extractor
+```
 
 #### How do I use this module?
 
