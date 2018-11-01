@@ -55,6 +55,6 @@ Retrieves the comment bubble text from a Word document. This will handle UNICODE
 
 #### License
 
-Copyright (c) 2016-2017. Stuart Watt.
+Copyright (c) 2016-2018. Stuart Watt.
 
 Licensed under the MIT License.
