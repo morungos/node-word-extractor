@@ -1,0 +1,23 @@
+env:
+  jest: true
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+rules:
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+  no-control-regex:
+    - off
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - off
+    - double
+  semi:
+    - error
+    - always
+  no-commonjs:
+    - off

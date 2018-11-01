@@ -1,3 +1,9 @@
+### 0.2.0 / 31st October 3018
+
+ * Removed coffeescript and mocha, now using jest and plain ES6
+ * Removed partial work on .docx (for now)
+
+
 ### 0.1.4 / 25th March 2017
 
  * Fixed a documentation issue. `extract` returns a Promise. See #6
