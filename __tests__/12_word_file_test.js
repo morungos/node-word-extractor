@@ -14,6 +14,6 @@ describe('Word file test02.doc', () => {
         expect(body).toMatch(/create several FKPs for testing purposes/);
         expect(body).toMatch(/dsadasdasdasd/);
         return done();
-    });
+      });
   });
 });

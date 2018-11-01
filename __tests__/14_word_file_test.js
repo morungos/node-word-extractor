@@ -12,7 +12,7 @@ describe('Word file test04.doc', () => {
         const body = result.getBody();
         expect(body).toMatch(/Moli\u00e8re/);
         done();
-    });
+      });
   });
 
   it('should have headers and footers', (done) => {
@@ -23,6 +23,6 @@ describe('Word file test04.doc', () => {
         expect(body).toMatch(/The footer/);
         expect(body).toMatch(/Moli\u00e8re/);
         done();
-    });
+      });
   });
 });

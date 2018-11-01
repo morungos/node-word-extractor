@@ -14,6 +14,6 @@ describe('Word file test03.doc', () => {
         expect(body).toMatch(/Apache v2\.0/);
         expect(body).toMatch(/you want your protections to be\./);
         done();
-    });
+      });
   });
 });

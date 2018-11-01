@@ -1,6 +1,6 @@
 {
   "name": "word-extractor",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Node.js package to read Word .doc files",
   "main": "lib/word.js",
   "scripts": {
@@ -21,11 +21,26 @@
   },
   "homepage": "https://github.com/morungos/node-word-extractor",
   "devDependencies": {
+    "eslint": "^5.8.0",
     "jest": "^23.6.0"
   },
   "dependencies": {
     "async": "^1.5.2",
     "event-stream": "^3.3.2",
     "underscore": "^1.8.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "transform": {},
+    "transformIgnorePatterns": [],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test))\\.jsx?$",
+    "collectCoverageFrom": [
+      "lib/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }

@@ -13,6 +13,6 @@ describe('Word file test09.doc', () => {
         expect(body).toMatch(/This line gets read fine/);
         expect(body).toMatch(/Ooops, where are the \( opening \( brackets\?/);
         done();
-    });
+      });
   });
 });

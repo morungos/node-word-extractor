@@ -10,7 +10,7 @@ describe.each(files.filter((f) => f.match(/\.doc$/)).map((x) => [x]))(
     it('can be opened correctly', (done) => {
       const filename = path.resolve(__dirname, `data/${file}`);
       const doc = new oleDoc(filename);
-      doc.on('err', () => done(err));
+      doc.on('err', (err) => done(err));
       doc.on('ready', () => done());
       doc.read();
     });

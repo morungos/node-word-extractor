@@ -23,7 +23,7 @@ describe.each(files.filter((f) => f.match(/\.doc$/)).map((x) => [x]))(
             'ccpAtn': expect.any(Number)
           }));
           done();
-      });
+        });
     });
   }
 );

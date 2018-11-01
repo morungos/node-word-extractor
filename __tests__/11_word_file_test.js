@@ -1,9 +1,5 @@
-const fs = require('fs');
 const path = require('path');
-const { Buffer } = require('buffer');
-
 const WordExtractor = require('../lib/word');
-const Document = require('../lib/document');
 
 describe('Word file test01.doc', () => {
 
@@ -18,6 +14,6 @@ describe('Word file test01.doc', () => {
         expect(body).toMatch(/http:\/\/lyla\.maestropublishing\.com\//);
         expect(body).toMatch(/You must use the IDs\./);
         done();
-    });
+      });
   });
 });

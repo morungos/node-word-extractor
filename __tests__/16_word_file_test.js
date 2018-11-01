@@ -13,6 +13,6 @@ describe('Word file test06.doc', () => {
         expect(body).toMatch(/Insert interface name here/);
         expect(body).toMatch(/M\u00e9thodes appel\u00e9es/);
         done();
-    });
+      });
   });
 });

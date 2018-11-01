@@ -12,6 +12,6 @@ describe('Word file test05.doc', () => {
         const body = result.getBody();
         expect(body).toMatch(/This is a simple file created with Word 97-SR2/);
         done();
-    });
+      });
   });
 });
