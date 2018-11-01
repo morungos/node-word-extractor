@@ -4,7 +4,8 @@
   "description": "Node.js package to read Word .doc files",
   "main": "lib/word.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,6 @@
   "dependencies": {
     "async": "^1.5.2",
     "event-stream": "^3.3.2",
-    "underscore": "^1.8.3",
-    "xmldom": "^0.1.27",
-    "xpath": "0.0.24",
-    "yauzl": "^2.8.0"
+    "underscore": "^1.8.3"
   }
 }
