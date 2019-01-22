@@ -1,3 +1,9 @@
+### 0.2.1 / 21st January 2019
+
+ * Added a new getEndnotes method. See #16
+ * Fixed a bad loop in the OLE code
+
+
 ### 0.2.0 / 31st October 3018
 
  * Removed coffeescript and mocha, now using jest and plain ES6

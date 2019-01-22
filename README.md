@@ -44,6 +44,10 @@ Retrieves the content text from a Word document. This will handle UNICODE charac
 
 Retrieves the footnote text from a Word document. This will handle UNICODE characters correctly, so if there are accented or non-Latin-1 characters present in the document, they'll show as is in the returned string.
 
+`Document#getEndnotes()`
+
+Retrieves the endnote text from a Word document. This will handle UNICODE characters correctly, so if there are accented or non-Latin-1 characters present in the document, they'll show as is in the returned string.
+
 `Document#getHeaders()`
 
 Retrieves the header and footer text from a Word document. This will handle UNICODE characters correctly, so if there are accented or non-Latin-1 characters present in the document, they'll show as is in the returned string.
@@ -55,6 +59,6 @@ Retrieves the comment bubble text from a Word document. This will handle UNICODE
 
 #### License
 
-Copyright (c) 2016-2018. Stuart Watt.
+Copyright (c) 2016-2019. Stuart Watt.
 
 Licensed under the MIT License.
