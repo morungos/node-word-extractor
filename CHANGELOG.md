@@ -1,3 +1,8 @@
+### 0.2.2 / 23rd January 2019
+
+ * Fixed [the bad dependency on event-stream](https://github.com/dominictarr/event-stream/issues/116)
+
+
 ### 0.2.1 / 21st January 2019
 
  * Added a new getEndnotes method. See #16
