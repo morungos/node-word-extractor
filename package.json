@@ -22,7 +22,7 @@
   "homepage": "https://github.com/morungos/node-word-extractor",
   "devDependencies": {
     "eslint": "^5.8.0",
-    "jest": "^23.6.0"
+    "jest": "^24.1.0"
   },
   "dependencies": {
     "async": "^1.5.2",
