@@ -4,7 +4,7 @@ const WordExtractor = require('../lib/word');
 const Document = require('../lib/document');
 
 const files = fs.readdirSync(path.resolve(__dirname, "data"));
-describe.each(files.filter((f) => f.match(/\.doc$/)).map((x) => [x]))(
+describe.each(files.filter((f) => f.match(/test(\d+)\.doc$/)).map((x) => [x]))(
   `Word file %s`, (file) => {
 
     const extractor = new WordExtractor();
