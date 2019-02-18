@@ -10,6 +10,6 @@ describe('Word file test12.doc', () => {
       .then((result) => {
         const body = result.getBody();
         expect(body).toMatch(/Row 2, cell 3/);
-    })
+      })
   );
 });
