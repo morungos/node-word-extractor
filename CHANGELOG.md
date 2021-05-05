@@ -1,13 +1,13 @@
-### 0.2.2 / 23rd January 2019
-
- * Fixed [the bad dependency on event-stream](https://github.com/dominictarr/event-stream/issues/116)
-
-
 ### 0.3.0 / 18th February 2019
 
  * Re-fixed the bad loop in the OLE code. See #15, #18
  * A few errors previously rejected as strings, they're now errors
  * Updated dependencies to safe versions. See #20
+
+
+### 0.2.2 / 23rd January 2019
+
+ * Fixed [the bad dependency on event-stream](https://github.com/dominictarr/event-stream/issues/116)
 
 
 ### 0.2.1 / 21st January 2019
