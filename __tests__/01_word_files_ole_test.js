@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { Buffer } = require('buffer');
 
-const OleCompoundDoc = require('../lib/ole-compound-doc').OleCompoundDoc;
+const OleCompoundDoc = require('../lib/ole-compound-doc');
 
 const files = fs.readdirSync(path.resolve(__dirname, "data"));
 describe.each(files.filter((f) => f.match(/test(\d+)\.doc$/)).map((x) => [x]))(
