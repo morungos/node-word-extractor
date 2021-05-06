@@ -2,14 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const { Buffer } = require('buffer');
 
-const oleDoc = require('../lib/ole-doc').OleCompoundDoc;
+const OleCompoundDoc = require('../lib/ole-compound-doc').OleCompoundDoc;
 
 const files = fs.readdirSync(path.resolve(__dirname, "data"));
 describe.each(files.filter((f) => f.match(/test(\d+)\.doc$/)).map((x) => [x]))(
   `Word file %s`, (file) => {
     it('can be opened correctly', (done) => {
       const filename = path.resolve(__dirname, `data/${file}`);
-      const doc = new oleDoc(filename);
+      const doc = new OleCompoundDoc(filename);
       doc.on('err', (err) => done(err));
       doc.on('ready', () => done());
       doc.read();
@@ -17,7 +17,7 @@ describe.each(files.filter((f) => f.match(/test(\d+)\.doc$/)).map((x) => [x]))(
 
     it('generates a valid Word stream', (done) => {
       const filename = path.resolve(__dirname, `data/${file}`);
-      const doc = new oleDoc(filename);
+      const doc = new OleCompoundDoc(filename);
 
       doc.on('err', err => done(err));
       doc.on('ready', () => {
