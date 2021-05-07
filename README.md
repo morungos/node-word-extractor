@@ -17,14 +17,19 @@ Word file, without leaving the node.js environment.
 ```bash=
 yarn add word-extractor
 
-# Or using npm... npm install word-extractor
+# Or using npm... 
+npm install word-extractor
 ```
 
 ### How do I use this module?
 
-var WordExtractor = require("word-extractor"); var extractor = new
-WordExtractor(); var extracted = extractor.extract("file.doc");
+```
+const WordExtractor = require("word-extractor"); 
+const extractor = new WordExtractor();
+const extracted = extractor.extract("file.doc");
+
 extracted.then(function(doc) { console.log(doc.getBody()); });
+```
 
 The object returned from the `extract()` method is a promise that resolves to a
 document object, which then provides several views onto different parts of the
@@ -69,6 +74,6 @@ characters present in the document, they'll show as is in the returned string.
 
 ### License
 
-Copyright (c) 2016-2019. Stuart Watt.
+Copyright (c) 2016-2021. Stuart Watt.
 
 Licensed under the MIT License.
