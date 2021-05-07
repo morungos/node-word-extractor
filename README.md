@@ -12,6 +12,9 @@ the installation and deployment burden as well as the runtime one.
 This module is intended to provide a much faster way of reading the text from a
 Word file, without leaving the node.js environment.
 
+This means you do not need to install Word, Office, or anything else, and the
+module will work on all platforms, without any native binary code requirements.
+
 ### How do I install this module?
 
 ```bash=
