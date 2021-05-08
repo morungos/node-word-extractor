@@ -40,10 +40,11 @@ document contents.
 
 ### Methods
 
-`WordExtractor#extract(file)`
+`WordExtractor#extract(<filename>  | <Buffer>)`
 
 Main method to open a Word file and retrieve the data. Returns a promise which
-resolves to a `Document`.
+resolves to a `Document`. If a Buffer is passed instead of a filename, then
+the buffer is used directly, instad of reading a disk from the file system.
 
 `Document#getBody()`
 
