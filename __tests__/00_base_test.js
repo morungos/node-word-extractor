@@ -1,5 +1,6 @@
+const fs = require('fs');
 const path = require('path');
-const WordExtractor = require('../lib/index');
+const WordExtractor = require('../lib/word');
 
 describe('Checking block from files', () => {
 
@@ -10,7 +11,11 @@ describe('Checking block from files', () => {
   });
 
   it('should extract a .docx document successfully', () => {
-    return extractor.extract(path.resolve(__dirname, "data/test13.docx"));
+    const result = extractor.extract(path.resolve(__dirname, "data/test13.docx"));
+    return expect(result).rejects.toEqual(expect.objectContaining({
+      message: expect.stringMatching(/Not a valid compound document/)
+    }));
+
   });
 
   it('should handle missing file error correctly', () => {
@@ -18,6 +23,20 @@ describe('Checking block from files', () => {
     return expect(result).rejects.toEqual(expect.objectContaining({
       message: expect.stringMatching(/no such file or directory/)
     }));
+  });
+
+  it('should properly close the file', () => {
+    const open = jest.spyOn(fs, 'open');
+    const close = jest.spyOn(fs, 'close');
+    return extractor.extract(path.resolve(__dirname, "data/test01.doc"))
+      .then(() => {
+        expect(open).toHaveBeenCalledTimes(1);
+        expect(close).toHaveBeenCalledTimes(1);
+      })
+      .finally(() => {
+        open.mockRestore();
+        close.mockRestore();
+      });
   });
 
 });
