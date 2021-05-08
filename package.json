@@ -25,10 +25,7 @@
     "eslint": "^7.25.0",
     "jest": "^26.6.0"
   },
-  "dependencies": {
-    "async": "^1.5.2",
-    "event-stream": "^3.3.4"
-  },
+  "dependencies": {},
   "jest": {
     "moduleFileExtensions": [
       "js"
