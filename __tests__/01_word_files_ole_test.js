@@ -3,21 +3,27 @@ const path = require('path');
 const { Buffer } = require('buffer');
 
 const OleCompoundDoc = require('../lib/ole-compound-doc');
+const FileReader = require('../lib/file-reader');
 
 const files = fs.readdirSync(path.resolve(__dirname, "data"));
 describe.each(files.filter((f) => f.match(/test(\d+)\.doc$/)).map((x) => [x]))(
   `Word file %s`, (file) => {
     it('can be opened correctly', () => {
       const filename = path.resolve(__dirname, `data/${file}`);
-      const doc = new OleCompoundDoc(filename);
-      return doc.read();
+      const reader = new FileReader(filename);
+      const doc = new OleCompoundDoc(reader);
+      return reader.open()
+        .then(() => doc.read())
+        .finally(() => reader.close());
     });
 
     it('generates a valid Word stream', () => {
       const filename = path.resolve(__dirname, `data/${file}`);
-      const doc = new OleCompoundDoc(filename);
+      const reader = new FileReader(filename);
+      const doc = new OleCompoundDoc(reader);
 
-      return doc.read()
+      return reader.open()
+        .then(() => doc.read())
         .then(() => {
           return new Promise((resolve, reject) => {
             const chunks = [];
@@ -30,7 +36,8 @@ describe.each(files.filter((f) => f.match(/test(\d+)\.doc$/)).map((x) => [x]))(
         .then((buffer) => {
           const magicNumber = buffer.readUInt16LE(0);
           expect(magicNumber.toString(16)).toBe("a5ec");
-        });
+        })
+        .finally(() => reader.close());
     });
   }
 );
