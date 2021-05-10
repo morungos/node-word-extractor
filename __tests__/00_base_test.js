@@ -11,11 +11,7 @@ describe('Checking block from files', () => {
   });
 
   it('should extract a .docx document successfully', () => {
-    const result = extractor.extract(path.resolve(__dirname, "data/test13.docx"));
-    return expect(result).rejects.toEqual(expect.objectContaining({
-      message: expect.stringMatching(/Extracting from .docx files not yet implemented/)
-    }));
-
+    return extractor.extract(path.resolve(__dirname, "data/test01.docx"));
   });
 
   it('should handle missing file error correctly', () => {
