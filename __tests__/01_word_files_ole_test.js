@@ -6,8 +6,11 @@ const OleCompoundDoc = require('../lib/ole-compound-doc');
 const FileReader = require('../lib/file-reader');
 const BufferReader = require('../lib/buffer-reader');
 
-const files = fs.readdirSync(path.resolve(__dirname, "data"));
-describe.each(files.filter((f) => f.match(/test(\d+)\.doc$/)).map((x) => [x]))(
+const files = fs.readdirSync(path.resolve(__dirname, "data"))
+  .filter((f) => ! /^~/.test(f))
+  .filter((f) => f.match(/test(\d+)\.doc$/));
+
+describe.each(files.map((x) => [x]))(
   `Word file %s`, (file) => {
     it('can be opened correctly', () => {
       const filename = path.resolve(__dirname, `data/${file}`);
