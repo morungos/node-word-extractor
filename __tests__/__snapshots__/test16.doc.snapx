@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word file test16.doc should match its snapshot 1`] = `"{\\"body\\":\\"This is a test of reviewing\\\\n\\\\nThis text has been inserted, and should be included\\\\nThis text has been deleted, and should not be included\\\\n\\",\\"footnotes\\":\\"\\",\\"endnotes\\":\\"\\",\\"headers\\":\\"\\",\\"annotations\\":\\"\\"}"`;

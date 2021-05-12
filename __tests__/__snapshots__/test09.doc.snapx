@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word file test09.doc should match its snapshot 1`] = `"{\\"body\\":\\"{This line gets read fine}\\\\nOoops, where are the ( opening ( brackets?\\\\n\\",\\"footnotes\\":\\"\\",\\"endnotes\\":\\"\\",\\"headers\\":\\"\\\\u0003\\\\n\\\\n\\\\u0004\\\\n\\\\n\\\\u0003\\\\n\\\\n\\\\u0004\\\\n\\\\n\\\\n\\",\\"annotations\\":\\"\\"}"`;

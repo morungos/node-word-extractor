@@ -1,6 +1,6 @@
 /**
  * @overview
- * Snapshot tests for all Word (.doc) files. The useful thing about
+ * Snapshot tests for all Word (.doc) files using buffers. The useful thing about
  * this is it detects changes, but also the snapshots include the binary
  * values and characters, so we see exactly what is returned, which is
  * extremely useful for debugging.
@@ -22,7 +22,11 @@ describe.each(pairs.map((x) => [x]))(
     const extractor = new WordExtractor();
 
     it('should match its snapshot', () => {
-      return extractor.extract(path.resolve(__dirname, `data/${file}`))
+
+      const filename = path.resolve(__dirname, `data/${file}`);
+      const buffer = fs.readFileSync(filename);
+      
+      return extractor.extract(buffer)
         .then((document) => {
           const value = JSON.stringify({
             body: document.getBody(),
@@ -36,3 +40,4 @@ describe.each(pairs.map((x) => [x]))(
     });
   }
 );
+ 

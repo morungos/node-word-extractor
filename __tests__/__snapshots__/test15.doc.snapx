@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word file test15.doc should match its snapshot 1`] = `"{\\"body\\":\\"Endnotes and footnotes test\\\\n\\\\nParagraph 1\\\\n\\\\nParagraph 2\\\\n\\",\\"footnotes\\":\\" This is a footnote\\\\n\\\\n\\",\\"endnotes\\":\\" This is an endnote\\\\n\\\\n\\",\\"headers\\":\\"\\\\u0003\\\\n\\\\n\\\\u0004\\\\n\\\\n\\\\u0003\\\\n\\\\n\\\\u0004\\\\n\\\\n\\\\n\\",\\"annotations\\":\\"\\"}"`;
