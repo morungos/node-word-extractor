@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const WordExtractor = require('../lib/word');
-const WordOleDocument = require('../lib/word-ole-document');
+const Document = require('../lib/document');
 
 const files = fs.readdirSync(path.resolve(__dirname, "data"))
   .filter((f) => ! /^~/.test(f))
@@ -16,15 +16,7 @@ describe.each(files.map((x) => [x]))(
       const extract = extractor.extract(path.resolve(__dirname, `data/${file}`));
       return extract
         .then(function(result) {
-          expect(result).toBeInstanceOf(WordOleDocument);
-          expect(result.pieces).toBeInstanceOf(Array);
-          expect(result.boundaries).toEqual(expect.objectContaining({
-            'fcMin': expect.any(Number),
-            'ccpText': expect.any(Number), 
-            'ccpFtn': expect.any(Number), 
-            'ccpHdd': expect.any(Number), 
-            'ccpAtn': expect.any(Number)
-          }));
+          expect(result).toBeInstanceOf(Document);
         });
     });
   }
