@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Word file test12.doc should match its snapshot 1`] = `"{\\"body\\":\\"This is a simple paragraph\\\\n\\\\nRow 1, cell 1\\\\tRow 1, cell 2\\\\tRow 1, cell 3\\\\t\\\\tRow 2, cell 1\\\\t\\\\tRow 2, cell 3\\\\t\\\\t\\\\nAnd a second paragraph\\\\n\\\\n\\",\\"footnotes\\":\\"\\",\\"endnotes\\":\\"\\",\\"headers\\":\\"\\",\\"annotations\\":\\"\\"}"`;
+exports[`Word file test12.doc should match its snapshot 1`] = `
+Object {
+  "annotations": "\\"\\"",
+  "body": "\\"This is a simple paragraph\\\\n\\\\nRow 1, cell 1\\\\tRow 1, cell 2\\\\tRow 1, cell 3\\\\t\\\\tRow 2, cell 1\\\\t\\\\tRow 2, cell 3\\\\t\\\\t\\\\nAnd a second paragraph\\\\n\\\\n\\"",
+  "endnotes": "\\"\\"",
+  "footnotes": "\\"\\"",
+  "headers": "\\"\\"",
+}
+`;

@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Word file test06.doc should match its snapshot 1`] = `"{\\"body\\":\\"Nom\\\\tDocument1\\\\t\\\\tAnalyste\\\\tROB (432)\\\\t\\\\tBut\\\\tInsert subject here.\\\\t\\\\tDéfinition\\\\t\\\\t\\\\tPaquetage\\\\tInsert package name here..\\\\t\\\\tAncêtre\\\\tInsert super class name here..\\\\t\\\\tInterface\\\\tInsert interface name here..\\\\t\\\\tConstructeur\\\\tnewFwClient (référence de la classe appelante du type DmfAFrameworkClient).\\\\t\\\\tMéthode(s)\\\\tpublic Boolean evaluate( ) throw Exception \\\\n(méthode où se trouve toute la logique).\\\\t\\\\tAutre(s)\\\\tInsert other definitions here. \\\\t\\\\tFonctions appelées\\\\tInsert called functions here.\\\\t\\\\tMéthodes appelées\\\\tInsert called methods here.\\\\t\\\\t\\\\nLogique\\\\nInsert logic description here..\\\\n\\",\\"footnotes\\":\\"\\",\\"endnotes\\":\\"\\",\\"headers\\":\\"\\\\n\\\\nDocument1\\\\tPage 2.\\\\n\\\\nDocument1\\\\n\\\\n12/09/03\\\\t1.\\\\n\\\\n\\\\n\\",\\"annotations\\":\\"\\"}"`;
+exports[`Word file test06.doc should match its snapshot 1`] = `
+Object {
+  "annotations": "\\"\\"",
+  "body": "\\"Nom\\\\tDocument1\\\\t\\\\tAnalyste\\\\tROB (432)\\\\t\\\\tBut\\\\tInsert subject here.\\\\t\\\\tDéfinition\\\\t\\\\t\\\\tPaquetage\\\\tInsert package name here..\\\\t\\\\tAncêtre\\\\tInsert super class name here..\\\\t\\\\tInterface\\\\tInsert interface name here..\\\\t\\\\tConstructeur\\\\tnewFwClient (référence de la classe appelante du type DmfAFrameworkClient).\\\\t\\\\tMéthode(s)\\\\tpublic Boolean evaluate( ) throw Exception \\\\n(méthode où se trouve toute la logique).\\\\t\\\\tAutre(s)\\\\tInsert other definitions here. \\\\t\\\\tFonctions appelées\\\\tInsert called functions here.\\\\t\\\\tMéthodes appelées\\\\tInsert called methods here.\\\\t\\\\t\\\\nLogique\\\\nInsert logic description here..\\\\n\\"",
+  "endnotes": "\\"\\"",
+  "footnotes": "\\"\\"",
+  "headers": "\\"\\\\n\\\\nDocument1\\\\tPage 2.\\\\n\\\\nDocument1\\\\n\\\\n12/09/03\\\\t1.\\\\n\\\\n\\\\n\\"",
+}
+`;

@@ -28,13 +28,13 @@ describe.each(pairs.map((x) => [x]))(
       
       return extractor.extract(buffer)
         .then((document) => {
-          const value = JSON.stringify({
-            body: document.getBody(),
-            footnotes: document.getFootnotes(),
-            endnotes: document.getEndnotes(),
-            headers: document.getHeaders(),
-            annotations: document.getAnnotations(),
-          });
+          const value = {
+            body: JSON.stringify(document.getBody()),
+            footnotes: JSON.stringify(document.getFootnotes()),
+            endnotes: JSON.stringify(document.getEndnotes()),
+            headers: JSON.stringify(document.getHeaders()),
+            annotations: JSON.stringify(document.getAnnotations()),
+          };
           expect(value).toMatchSpecificSnapshot(`./__snapshots__/${file}.snapx`);
         });
     });
