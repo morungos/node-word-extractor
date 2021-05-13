@@ -6,6 +6,6 @@ Object {
   "body": "\\"Endnotes and footnotes test\\\\n\\\\nParagraph 1\\\\n\\\\nParagraph 2\\\\n\\"",
   "endnotes": "\\" This is an endnote\\\\n\\\\n\\"",
   "footnotes": "\\" This is a footnote\\\\n\\\\n\\"",
-  "headers": "\\"\\\\u0003\\\\n\\\\n\\\\u0004\\\\n\\\\n\\\\u0003\\\\n\\\\n\\\\u0004\\\\n\\\\n\\\\n\\"",
+  "headers": "\\"\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\"",
 }
 `;
