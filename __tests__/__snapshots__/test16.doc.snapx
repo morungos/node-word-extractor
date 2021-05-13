@@ -3,7 +3,7 @@
 exports[`Word file test16.doc should match its snapshot 1`] = `
 Object {
   "annotations": "\\"\\"",
-  "body": "\\"This is a test of reviewing\\\\n\\\\nThis text has been inserted, and should be included\\\\nThis text has been deleted, and should not be included\\\\n\\"",
+  "body": "\\"This is a test of reviewing\\\\n\\\\nThis text has been inserted, and should be included\\\\n\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
   "headers": "\\"\\"",
