@@ -4,8 +4,8 @@ exports[`Word file test15.doc should match its snapshot 1`] = `
 Object {
   "annotations": "\\"\\"",
   "body": "\\"Endnotes and footnotes test\\\\n\\\\nParagraph 1\\\\n\\\\nParagraph 2\\\\n\\"",
-  "endnotes": "\\" This is an endnote\\\\n\\\\n\\"",
-  "footnotes": "\\" This is a footnote\\\\n\\\\n\\"",
-  "headers": "\\"\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\"",
+  "endnotes": "\\" This is an endnote\\\\n\\"",
+  "footnotes": "\\" This is a footnote\\\\n\\"",
+  "headers": "\\"\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\"",
 }
 `;
