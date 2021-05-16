@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Word file test16.doc should match its snapshot 1`] = `
+exports[`Word file test14.doc should match its snapshot 1`] = `
 Object {
   "annotations": "\\"\\"",
   "body": "\\"This is a test of reviewing\\\\n\\\\nThis text has been inserted, and should be included\\\\n\\\\n\\"",
