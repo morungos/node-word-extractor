@@ -1,5 +1,7 @@
 ## word-extractor
 
+![test workflow](https://github.com/morungos/node-word-extractor/actions/workflows/main.yml/badge.svg)
+
 Read data from a Word document (.doc or .docx) using Node.js
 
 ### Why use this module?
