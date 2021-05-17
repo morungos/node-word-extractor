@@ -2559,7 +2559,7 @@ jsdoc@^3.6.6:
     requizzle "^0.2.3"
     strip-json-comments "^3.1.0"
     taffydb "2.6.2"
-    underscore "~1.10.2"
+    underscore "^1.12.1"
 
 jsdom@^16.4.0:
   version "16.5.3"
