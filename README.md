@@ -7,7 +7,7 @@ Read data from a Word document (.doc or .docx) using Node.js
 ### Why use this module?
 
 There are a fair number of npm components which can extract text from Word .doc
-files, but they all appear to require some external helper program, and involve
+files, but they often appear to require some external helper program, and involve
 either spawning a process or communicating with a persistent one. That raises
 the installation and deployment burden as well as the runtime one.
 
