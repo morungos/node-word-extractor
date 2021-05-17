@@ -6,6 +6,6 @@ Object {
   "body": "\\"This is a simple Word file\\\\n\\\\nSecond paragraph\\\\n\\\\nThird paragraph\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
-  "headers": "\\"\\"",
+  "headers": Any<String>,
 }
 `;

@@ -6,6 +6,6 @@ Object {
   "body": "\\"Endnotes and footnotes test\\\\n\\\\nParagraph 1\\\\n\\\\nParagraph 2\\\\n\\"",
   "endnotes": "\\" This is an endnote\\\\n\\"",
   "footnotes": "\\" This is a footnote\\\\n\\"",
-  "headers": "\\"\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\"",
+  "headers": Any<String>,
 }
 `;

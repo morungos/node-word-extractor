@@ -6,6 +6,6 @@ Object {
   "body": "\\"A second test of reviewing, but with Unicode characters in to see if character offsets get broken. 😀 ∀\\\\n\\\\nThis is a test of reviewing\\\\n\\\\nThis text has been inserted, ✻and should be included\\\\n\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
-  "headers": "\\"\\"",
+  "headers": Any<String>,
 }
 `;

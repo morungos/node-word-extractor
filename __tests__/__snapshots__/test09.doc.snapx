@@ -6,6 +6,6 @@ Object {
   "body": "\\"{This line gets read fine}\\\\nOoops, where are the ( opening ( brackets?\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
-  "headers": "\\"\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\\\n\\"",
+  "headers": Any<String>,
 }
 `;

@@ -36,7 +36,9 @@ describe.each(pairs.map((x) => [x]))(
             headers: JSON.stringify(document.getHeaders()),
             annotations: JSON.stringify(document.getAnnotations()),
           };
-          expect(value).toMatchSpecificSnapshot(`./__snapshots__/${file}.snapx`);
+          expect(value).toMatchSpecificSnapshot(`./__snapshots__/${file}.snapx`, {
+            headers: expect.any(String)
+          });
         });
     });
   }

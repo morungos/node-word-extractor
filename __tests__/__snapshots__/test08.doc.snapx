@@ -6,6 +6,6 @@ Object {
   "body": "\\"This is a bookmark test\\\\n\\\\nThe bookmark \\\\\\"TestBookmark\\\\\\" should include the text \\\\\\"Morag says hello\\\\\\"\\\\n\\\\n\\\\nThis is a form, and the bookmark is Text1\\\\n\\\\nForm text\\\\n\\\\n\\\\n\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
-  "headers": "\\"\\"",
+  "headers": Any<String>,
 }
 `;

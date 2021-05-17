@@ -3,8 +3,12 @@
 Where there is a `.docx` file name with the same name, it is a `.docx` version saved
 from the same file, and should extract to the same document data. 
 
-* `test01.doc` -- a long and complex Word file, containing insertions, deletions, 
+* `bigfile-01.doc` -- a long and complex Word file, containing insertions, deletions, 
   hyperlinks, and mixed Unicode and plain text segments.
+
+* `badfile-01-bad-header.doc` -- a test of an invalid Word file
+
+* `test01.doc` -- a short test of insertion and deletion with Unicode.
 
 * `test02.doc` -- a long set of short random paragraphs with a wide ranging of styling.
 
@@ -32,5 +36,3 @@ from the same file, and should extract to the same document data.
 * `test13.doc` -- a short test of endnotes and footnotes combined.
 
 * `test14.doc` -- a short test of insertion and deletion.
-
-* `badfile-01-bad-header.doc` -- a test of an invalid Word file
