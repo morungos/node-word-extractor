@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word file test11.doc should match its snapshot 1`] = `
+Object {
+  "annotations": "\\"\\"",
+  "body": "\\"这是一个用来测试nodejs解析Word文档.doccccc\\\\nThis is a test for parsing the Word file in node.\\\\n\\"",
+  "endnotes": "\\"\\"",
+  "footnotes": "\\"\\"",
+  "headers": Any<String>,
+}
+`;

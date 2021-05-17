@@ -1,13 +1,31 @@
-### 0.2.2 / 23rd January 2019
+# Change log
 
- * Fixed [the bad dependency on event-stream](https://github.com/dominictarr/event-stream/issues/116)
+### 1.0.0 / 16th May 2021
 
+ * Major refactoring of the OLE code to use promises internally
+ * Added support for Open Office XML-based (.docx) Word files. See #1
+ * Added support for reading direct from a Buffer. See #11
+ * Removed event-stream dependency. See #19
+ * Fixed an issue with not closing files properly. See #23
+ * Corrected handling of extracting files with files. See #31
+ * Corrected handling of extracting files with deleted text. See #32
+ * Fixed issues with extracting multiple rows of table data. See #33 
+
+This is a major release, and while there are no incompatible API changes, 
+it seemed best to bump the version so as not to pick up updates automatically.
+However, all old applications should not require any code changes to use
+this version.
 
 ### 0.3.0 / 18th February 2019
 
  * Re-fixed the bad loop in the OLE code. See #15, #18
  * A few errors previously rejected as strings, they're now errors
  * Updated dependencies to safe versions. See #20
+
+
+### 0.2.2 / 23rd January 2019
+
+ * Fixed [the bad dependency on event-stream](https://github.com/dominictarr/event-stream/issues/116)
 
 
 ### 0.2.1 / 21st January 2019

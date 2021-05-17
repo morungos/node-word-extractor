@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word file test01.doc should match its snapshot 1`] = `
+Object {
+  "annotations": "\\"\\"",
+  "body": "\\"A second test of reviewing, but with Unicode characters in to see if character offsets get broken. 😀 ∀\\\\n\\\\nThis is a test of reviewing\\\\n\\\\nThis text has been inserted, ✻and should be included\\\\n\\\\n\\"",
+  "endnotes": "\\"\\"",
+  "footnotes": "\\"\\"",
+  "headers": Any<String>,
+}
+`;

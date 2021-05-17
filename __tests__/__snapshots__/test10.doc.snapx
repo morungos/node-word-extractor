@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word file test10.doc should match its snapshot 1`] = `
+Object {
+  "annotations": "\\"Second paragraph comment\\\\nThird paragraph comment - and this is all I have to say on the matter\\\\n\\"",
+  "body": "\\"This is a simple Word file\\\\n\\\\nSecond paragraph\\\\n\\\\nThird paragraph\\\\n\\"",
+  "endnotes": "\\"\\"",
+  "footnotes": "\\"\\"",
+  "headers": Any<String>,
+}
+`;
