@@ -1,6 +1,6 @@
 ## word-extractor
 
-Read data from a Word document using node.js
+Read data from a Word document using Node.js
 
 ### Why use this module?
 
@@ -10,10 +10,14 @@ either spawning a process or communicating with a persistent one. That raises
 the installation and deployment burden as well as the runtime one.
 
 This module is intended to provide a much faster way of reading the text from a
-Word file, without leaving the node.js environment.
+Word file, without leaving the Node.js environment.
 
 This means you do not need to install Word, Office, or anything else, and the
 module will work on all platforms, without any native binary code requirements.
+
+As of version 1.0, this module supports both traditional, OLE-based, Word files (usually .doc), 
+and modern, Open Office-style, ECMA-376 Word files (usually .docx). It can be 
+used both with files and with file contents in a Node.js Buffer.
 
 ### How do I install this module?
 
