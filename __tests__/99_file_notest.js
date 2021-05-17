@@ -3,9 +3,8 @@
  */
 
 const path = require('path');
-
 const WordExtractor = require('../lib/word');
 
 const extractor = new WordExtractor();
-extractor.extract(path.resolve(__dirname, "data/test07.doc"))
+extractor.extract(path.resolve(__dirname, process.argv[2]))
   .then((d) => console.log(d));
