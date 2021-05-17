@@ -1,6 +1,6 @@
 ## word-extractor
 
-Read data from a Word document using Node.js
+Read data from a Word document (.doc or .docx) using Node.js
 
 ### Why use this module?
 
