@@ -3,7 +3,7 @@
 exports[`Word file test15.doc should match its snapshot 1`] = `
 Object {
   "annotations": "\\"\\"",
-  "body": "\\"A second test of reviewing, but with Unicode characters in to see if character offsets get broken. 😀 ∀\\\\n\\\\nThis is a test of reviewing\\\\n\\\\nThis text has been inserted, ✻and should be included\\\\n\\\\n\\"",
+  "body": "\\"Header test file\\\\n\\\\nSome random text\\\\n\\\\nMore random text\\\\n\\\\nStill more random text\\\\n\\\\n\\\\nSection 1 body continued\\\\n\\\\n\\\\n\\\\n\\\\nSecond section\\\\n\\\\n\\\\n\\\\nSection 2 body continued\\\\n\\\\n\\\\n\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
   "headers": Any<String>,
