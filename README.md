@@ -1,6 +1,6 @@
 ## word-extractor
 
-![test workflow](https://github.com/morungos/node-word-extractor/actions/workflows/main.yml/badge.svg)
+[![npm version](https://badge.fury.io/js/word-extractor.svg)](https://badge.fury.io/js/word-extractor) ![test workflow](https://github.com/morungos/node-word-extractor/actions/workflows/main.yml/badge.svg)
 
 Read data from a Word document (.doc or .docx) using Node.js
 
