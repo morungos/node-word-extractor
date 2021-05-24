@@ -1,11 +1,13 @@
 ## word-extractor
 
+[![npm version](https://badge.fury.io/js/word-extractor.svg)](https://badge.fury.io/js/word-extractor) ![test workflow](https://github.com/morungos/node-word-extractor/actions/workflows/main.yml/badge.svg)
+
 Read data from a Word document (.doc or .docx) using Node.js
 
 ### Why use this module?
 
 There are a fair number of npm components which can extract text from Word .doc
-files, but they all appear to require some external helper program, and involve
+files, but they often appear to require some external helper program, and involve
 either spawning a process or communicating with a persistent one. That raises
 the installation and deployment burden as well as the runtime one.
 
@@ -71,6 +73,18 @@ present in the document, they'll show as is in the returned string.
 `Document#getHeaders()`
 
 Retrieves the header and footer text from a Word document. This will handle
+UNICODE characters correctly, so if there are accented or non-Latin-1
+characters present in the document, they'll show as is in the returned string.
+
+Note that by default, `getHeaders()` returns one string, containing all 
+headers and footers. This is compatible with previous versions. If you want
+to separate headers and footers, use `getHeaders({includeFooters: false})`, 
+to return only the headers, and the new method `getFooters()` (from version 1.0.1)
+to return the footers separately.
+
+`Document#getFooters()`
+
+From version 1.0.1. Retrieves the footer text from a Word document. This will handle
 UNICODE characters correctly, so if there are accented or non-Latin-1
 characters present in the document, they'll show as is in the returned string.
 

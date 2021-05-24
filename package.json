@@ -1,13 +1,13 @@
 {
   "name": "word-extractor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js package to read Word .doc files",
   "main": "lib/word.js",
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
     "coverage": "jest --coverage",
-    "jsdoc": "jsdoc lib --configure jsdoc.json"
+    "jsdoc": "jsdoc --configure jsdoc.json"
   },
   "repository": {
     "type": "git",
