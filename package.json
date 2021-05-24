@@ -7,7 +7,7 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "coverage": "jest --coverage",
-    "jsdoc": "jsdoc lib --configure jsdoc.json"
+    "jsdoc": "jsdoc --configure jsdoc.json"
   },
   "repository": {
     "type": "git",
