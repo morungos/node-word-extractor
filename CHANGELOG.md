@@ -1,5 +1,9 @@
 # Change log
 
+### 1.0.1 / 24th May 2021
+
+ * Added separation between headers and footers. See #34
+ 
 ### 1.0.0 / 16th May 2021
 
  * Major refactoring of the OLE code to use promises internally

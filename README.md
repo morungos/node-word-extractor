@@ -76,6 +76,18 @@ Retrieves the header and footer text from a Word document. This will handle
 UNICODE characters correctly, so if there are accented or non-Latin-1
 characters present in the document, they'll show as is in the returned string.
 
+Note that by default, `getHeaders()` returns one string, containing all 
+headers and footers. This is compatible with previous versions. If you want
+to separate headers and footers, use `getHeaders({includeFooters: false})`, 
+to return only the headers, and the new method `getFooters()` (from version 1.0.1)
+to return the footers separately.
+
+`Document#getFooters()`
+
+From version 1.0.1. Retrieves the footer text from a Word document. This will handle
+UNICODE characters correctly, so if there are accented or non-Latin-1
+characters present in the document, they'll show as is in the returned string.
+
 `Document#getAnnotations()`
 
 Retrieves the comment bubble text from a Word document. This will handle
