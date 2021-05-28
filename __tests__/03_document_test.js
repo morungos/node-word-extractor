@@ -58,4 +58,24 @@ describe('Document', () => {
     expect(document.getFooters()).toBe("This is the footers\n");
   });
 
+  it('should read the body textboxes', () => {
+    const document = new Document();
+    document._textboxes = "This is the textboxes\n";
+    document._headerTextboxes = "This is the header textboxes\n";
+    expect(document.getTextboxes({includeBody: true, includeHeadersAndFooters: false})).toBe("This is the textboxes\n");
+  });
+
+  it('should read the header textboxes', () => {
+    const document = new Document();
+    document._textboxes = "This is the textboxes\n";
+    document._headerTextboxes = "This is the header textboxes\n";
+    expect(document.getTextboxes({includeBody: false, includeHeadersAndFooters: true})).toBe("This is the header textboxes\n");
+  });
+
+  it('should read all textboxes', () => {
+    const document = new Document();
+    document._textboxes = "This is the textboxes\n";
+    document._headerTextboxes = "This is the header textboxes\n";
+    expect(document.getTextboxes({includeBody: true, includeHeadersAndFooters: true})).toBe("This is the textboxes\n\nThis is the header textboxes\n");
+  });
 });

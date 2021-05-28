@@ -70,7 +70,7 @@ Retrieves the endnote text from a Word document. This will handle UNICODE
 characters correctly, so if there are accented or non-Latin-1 characters
 present in the document, they'll show as is in the returned string.
 
-`Document#getHeaders()`
+`Document#getHeaders(options?)`
 
 Retrieves the header and footer text from a Word document. This will handle
 UNICODE characters correctly, so if there are accented or non-Latin-1
@@ -93,6 +93,19 @@ characters present in the document, they'll show as is in the returned string.
 Retrieves the comment bubble text from a Word document. This will handle
 UNICODE characters correctly, so if there are accented or non-Latin-1
 characters present in the document, they'll show as is in the returned string.
+
+`Document#getTextboxes(options?)`
+
+Retrieves the textbox contenttext from a Word document. This will handle
+UNICODE characters correctly, so if there are accented or non-Latin-1
+characters present in the document, they'll show as is in the returned string.
+
+Note that by default, `getTextboxes()` returns one string, containing all 
+textbox content from both main document and the headers and footers. You 
+can control what gets included by using the options `includeHeadersAndFooters`
+(which defaults to true) and `includeBody` (also defaults to true). So, 
+as an example, if you only want the body text box content, use: 
+`doc.getTextboxes({includeHeadersAndFooters: false})`.
 
 ### License
 

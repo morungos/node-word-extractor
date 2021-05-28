@@ -1,3 +1,5 @@
 __tests__
 jsdoc
 coverage
+.github
+.eslintrc.yml

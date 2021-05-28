@@ -6,6 +6,8 @@ Object {
   "body": "\\"Nom\\\\tDocument1\\\\t\\\\nAnalyste\\\\tROB (432)\\\\t\\\\nBut\\\\tInsert subject here.\\\\t\\\\nDéfinition\\\\t\\\\t\\\\nPaquetage\\\\tInsert package name here..\\\\t\\\\nAncêtre\\\\tInsert super class name here..\\\\t\\\\nInterface\\\\tInsert interface name here..\\\\t\\\\nConstructeur\\\\tnewFwClient (référence de la classe appelante du type DmfAFrameworkClient).\\\\t\\\\nMéthode(s)\\\\tpublic Boolean evaluate( ) throw Exception \\\\n(méthode où se trouve toute la logique).\\\\t\\\\nAutre(s)\\\\tInsert other definitions here. \\\\t\\\\nFonctions appelées\\\\tInsert called functions here.\\\\t\\\\nMéthodes appelées\\\\tInsert called methods here.\\\\t\\\\n\\\\nLogique\\\\nInsert logic description here..\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
+  "headerTextboxes": "\\"DmfA\\\\n\\\\nDmfA\\"",
   "headers": Any<String>,
+  "textboxes": "\\"\\"",
 }
 `;

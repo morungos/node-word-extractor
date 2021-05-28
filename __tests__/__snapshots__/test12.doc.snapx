@@ -6,6 +6,8 @@ Object {
   "body": "\\"This is a simple paragraph\\\\n\\\\nRow 1, cell 1\\\\tRow 1, cell 2\\\\tRow 1, cell 3\\\\t\\\\nRow 2, cell 1\\\\t\\\\tRow 2, cell 3\\\\t\\\\n\\\\nAnd a second paragraph\\\\n\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
+  "headerTextboxes": "\\"\\"",
   "headers": Any<String>,
+  "textboxes": "\\"\\"",
 }
 `;
