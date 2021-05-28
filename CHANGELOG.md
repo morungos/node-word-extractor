@@ -1,5 +1,9 @@
 # Change log
 
+### 1.0.2 / 28th May 2021
+
+ * Added a new method for reading textbox content. See #35
+ 
 ### 1.0.1 / 24th May 2021
 
  * Added separation between headers and footers. See #34
