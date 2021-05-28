@@ -6,6 +6,8 @@ Object {
   "body": "\\"这是一个用来测试nodejs解析Word文档.doccccc\\\\nThis is a test for parsing the Word file in node.\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
+  "headerTextboxes": "\\"\\"",
   "headers": Any<String>,
+  "textboxes": "\\"\\"",
 }
 `;

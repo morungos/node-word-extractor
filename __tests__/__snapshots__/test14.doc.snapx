@@ -6,6 +6,8 @@ Object {
   "body": "\\"This is a test of reviewing\\\\n\\\\nThis text has been inserted, and should be included\\\\n\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
+  "headerTextboxes": "\\"\\"",
   "headers": Any<String>,
+  "textboxes": "\\"\\"",
 }
 `;

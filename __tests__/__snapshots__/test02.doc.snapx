@@ -6,6 +6,8 @@ Object {
   "body": "\\"My name is Ryan This is a test blahblahblayh This is another test\\\\n\\\\nThis Test consists of several paragraphs and other things I am trying to get this to create several FKPs for testing purposes.\\\\n\\\\nThis paragraph has some differences sadasd asda sdasdasdasdasdasdasdasasdasddasdasd asdas dasdasd asdas d\\\\n\\\\na\\\\ndsadasdasdasd asd asd asdasdasda sdas d asdaasdas asd asdas dasdasd asd asdasd asdas dasd \\\\n\\\\ns Ryanasd\\\\nasd \\\\n asd\\\\ns d\\\\nas d\\\\nas d\\\\nas d\\\\nas d\\\\nas d\\\\nas d\\\\na sd\\\\na sd\\\\na sd\\\\ns d\\\\nsd \\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
+  "headerTextboxes": "\\"\\"",
   "headers": Any<String>,
+  "textboxes": "\\"\\"",
 }
 `;

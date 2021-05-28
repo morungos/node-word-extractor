@@ -6,6 +6,8 @@ Object {
   "body": "\\"This is a simple file created with Word 97-SR2.\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
+  "headerTextboxes": "\\"\\"",
   "headers": Any<String>,
+  "textboxes": "\\"\\"",
 }
 `;

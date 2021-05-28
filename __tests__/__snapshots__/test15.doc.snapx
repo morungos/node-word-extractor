@@ -6,6 +6,8 @@ Object {
   "body": "\\"Header test file\\\\n\\\\nSome random text\\\\n\\\\nMore random text\\\\n\\\\nStill more random text\\\\n\\\\n\\\\nSection 1 body continued\\\\n\\\\n\\\\n\\\\nStill section 1\\\\n\\\\n\\\\nSecond section\\\\n\\\\n\\\\n\\\\nSection 2 body continued\\\\n\\\\n\\\\n\\\\n\\\\nSection 2 continued\\\\n\\\\n\\\\n\\\\nSection 3 text\\\\n\\\\n\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
+  "headerTextboxes": "\\"\\"",
   "headers": Any<String>,
+  "textboxes": "\\"\\"",
 }
 `;

@@ -6,6 +6,8 @@ Object {
   "body": "\\"This is a fairly simple word document, over two pages, with headers and footers.\\\\nThe trick with this one is that it contains some Unicode based strings in it.\\\\nFirstly, some currency symbols:\\\\n\\\\tGBP - £\\\\n\\\\tEUR - €\\\\nNow, we'll have some French text, in bold and big:\\\\n\\\\tMolière\\\\nAnd some normal French text:\\\\n\\\\tL'Avare ou l'École du mensonge\\\\nThat's it for page one\\\\n\\\\n\\\\nThis is page two. Les Précieuses ridicules. The end.\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
+  "headerTextboxes": "\\"\\"",
   "headers": Any<String>,
+  "textboxes": "\\"\\"",
 }
 `;
