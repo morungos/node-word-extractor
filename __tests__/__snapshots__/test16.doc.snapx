@@ -6,7 +6,7 @@ Object {
   "body": "\\"Text box document test\\\\n\\\\nThis is a document containing several text boxes.\\\\n\\\\nParagraph 1\\\\n\\\\nParagraph 2\\\\n\\\\nParagraph 3\\\\n\\\\n\\\\n\\"",
   "endnotes": "\\"\\"",
   "footnotes": "\\"\\"",
-  "headerTextboxes": "\\"Header box 2\\\\n\\\\nHeader box 1\\\\n\\\\n\\"",
+  "headerTextboxes": "\\"Header box 2\\\\n\\\\nHeader box 1\\"",
   "headers": Any<String>,
   "textboxes": "\\"First text box, regular\\\\n\\\\nA shape with text inside\\\\n\\\\nSecond text box, copied and pasted from the first. The anchor point is the same\\\\nA second paragraph in the second text box, but it might wrap between boxes. \\\\nThis is in a third text box, but it's linked to the same text from the second.\\\\n\\\\nVertical text box added too\\\\n\\\\n\\"",
 }
