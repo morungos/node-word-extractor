@@ -29,7 +29,7 @@
     "jsdoc": "^3.6.6"
   },
   "dependencies": {
-    "sax": "^1.2.4",
+    "saxes": "^5.0.1",
     "yauzl": "^2.10.0"
   },
   "jest": {
