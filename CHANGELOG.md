@@ -1,5 +1,11 @@
 # Change log
 
+### 1.0.3 / 17th June2021
+
+ * Fixes issues with long attribute values (> 65k) in OO XML. See #37
+ * Propogate errors from XML failures into promise rejections. See #38
+ * Changed the XML parser dependency for maintenance and fixes. See #39
+ 
 ### 1.0.2 / 28th May 2021
 
  * Added a new method for reading textbox content. See #35
