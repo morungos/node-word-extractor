@@ -1,6 +1,11 @@
 # Change log
 
-### 1.0.3 / 17th June2021
+### 1.0.4 / 26th July 2021
+
+ * Fixed issue with missing content from LibreOffice files. See #40
+ * Fixed order of entry reading from LibreOffice OOXML files. See #41
+ 
+### 1.0.3 / 17th June 2021
 
  * Fixes issues with long attribute values (> 65k) in OO XML. See #37
  * Propogate errors from XML failures into promise rejections. See #38
