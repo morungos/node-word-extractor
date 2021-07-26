@@ -8,6 +8,6 @@ Object {
   "footnotes": "\\"\\"",
   "headerTextboxes": "\\"\\"",
   "headers": Any<String>,
-  "textboxes": "\\"\\\\n\\\\n\\"",
+  "textboxes": "\\"\\"",
 }
 `;

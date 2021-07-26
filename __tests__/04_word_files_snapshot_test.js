@@ -36,8 +36,8 @@ describe.each(pairs.map((x) => [x]))(
             endnotes: JSON.stringify(document.getEndnotes()),
             headers: JSON.stringify(document.getHeaders()),
             annotations: JSON.stringify(document.getAnnotations()),
-            textboxes: JSON.stringify(document.getTextboxes({includeHeadersAndFooters: false})),
-            headerTextboxes: JSON.stringify(cleanHeaderText(document.getTextboxes({includeBody: false})))
+            textboxes: JSON.stringify(document.getTextboxes({includeHeadersAndFooters: false}).trim()),
+            headerTextboxes: JSON.stringify(cleanHeaderText(document.getTextboxes({includeBody: false})).trim())
           };
           expect(value).toMatchSpecificSnapshot(`./__snapshots__/${file}.snapx`, {
             headers: expect.any(String)
