@@ -1,9 +1,9 @@
 /**
  * @overview
- * Snapshot tests for all OpenOffice (.docx) files. The useful thing about
- * this is it detects changes, but also the snapshots include the binary
- * values and characters, so we see exactly what is returned, which is
- * extremely useful for debugging.
+ * Snapshot tests for all Office Open XML (.docx) files. The useful thing about
+ * this is it detects changes, but also the snapshots include the binary values
+ * and characters, so we see exactly what is returned, which is extremely
+ * useful for debugging.
  */
 
 const fs = require('fs');

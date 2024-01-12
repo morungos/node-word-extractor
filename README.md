@@ -18,7 +18,7 @@ This means you do not need to install Word, Office, or anything else, and the
 module will work on all platforms, without any native binary code requirements.
 
 As of version 1.0, this module supports both traditional, OLE-based, Word files (usually .doc), 
-and modern, Open Office-style, ECMA-376 Word files (usually .docx). It can be 
+and modern, Office Open XML-style, ECMA-376 Word files (usually .docx). It can be 
 used both with files and with file contents in a Node.js Buffer.
 
 ### How do I install this module?
