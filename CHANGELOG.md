@@ -22,7 +22,7 @@
 ### 1.0.0 / 16th May 2021
 
  * Major refactoring of the OLE code to use promises internally
- * Added support for Open Office XML-based (.docx) Word files. See #1
+ * Added support for Office Open XML-based (.docx) Word files. See #1
  * Added support for reading direct from a Buffer. See #11
  * Removed event-stream dependency. See #19
  * Fixed an issue with not closing files properly. See #23
